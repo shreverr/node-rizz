@@ -1,3 +1,4 @@
+import NavBar from '@/components/customcomponents/NavBar'
 import { Lexend_Exa } from 'next/font/google'
 const lex = Lexend_Exa({ subsets: ['latin'], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] })
 
@@ -6,21 +7,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 pt-16 container text-[#D0D0D0] z-10">
       <img src="/noderizz.svg" alt="" className='h-screen fixed top-0 right-5' />
-      <nav className={'fixed w-full container ' + lex.className} >
-        <div className={'flex items-center justify-between w-full p-2'}>
-          <div className='font-black text-3xl '>
-            NODE RIZZ
-          </div>
-          <div className='flex items-center justify-center gap-10'>
-            <a href="#" className='hover:underline underline-offset-1 transition-all duration-500'>HOME</a>
-            <a href="/generate" className='hover:underline underline-offset-1 transition-all duration-500'>NODE RIZZ</a>
-            <a href="/docs" className='hover:underline underline-offset-1 transition-all duration-500'>DOCS</a>
-          </div>
-          <div>
-            <a href="/login" className='p-3 bg-[#000000]/50 rounded-sm border border-[#ffffff]'>Login/Signup</a>
-          </div>
-        </div>
-      </nav>
+      <NavBar />
       <section className='flex flex-col items-center justify-center h-screen pt-20 w-full p-10'>
         <div className='flex flex-col w-full h-full justify-center'>
           <div className='text-5xl leading-snug font-extrabold p-4'>
