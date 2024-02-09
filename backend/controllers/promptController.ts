@@ -30,10 +30,16 @@ export const generateAiFlow: RequestHandler = async (req: Request, res: Response
 
       const result: string = await run(genAI, guess);
       console.log(result);
+      const jsonString = JSON.stringify(result);
+
+      const strippedJsonString = jsonString.replace('```json', '').replace('```', '');
+
+      const strippedJsonObject = JSON.parse(strippedJsonString);
+
+
       
-      result.replace('json', '').replace('', '');
      
-      res.send(result);
+      res.send(strippedJsonObject);
     }
     else{
       res.status(200).json(responseData);
