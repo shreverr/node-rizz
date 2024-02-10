@@ -8,10 +8,11 @@ export const generateAiFlow: RequestHandler = async (req: Request, res: Response
   try {
     const prompt: string = req.body.prompt;
     const aiUrl: string = process.env.AI_URL + '/output';
+    const stringWithPercent20 = prompt.replace(/ /g, '%20');
 
     const aiResponse = await axios.get(aiUrl, {
       params: {
-        prompt: prompt,
+        prompt: stringWithPercent20,
       },
     });
 
