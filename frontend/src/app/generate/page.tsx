@@ -17,15 +17,20 @@ export default function Generate() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(inputValue);
-    axios.post('http://localhost:4000/ai/generate', {
+     axios.post('http://localhost:4000/ai/generate', {
       prompt: inputValue
     })
       .then(function (response) {
         console.log(response);
+        window.location = response.data.url;
+        // window.open(response.data.url, "_blank");
+
       })
       .catch(function (error) {
         console.log(error);
       });
+      // console.log(url);
+      
   };
 
 

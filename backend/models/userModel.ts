@@ -9,16 +9,22 @@ export interface IUser extends Document {
 const userSchema: Schema = new Schema({
   name: {
     type: String,
-    required: true
+    // required: true
   },
   email: {
     type: String,
-    required: true,
-    unique: true
+    // required: true,
+    // unique: true
   },
   password: {
     type: String,
-    required: true
+    // required: true
+  },
+  containerId: {
+    type: String,
+  },
+  userId: {
+    type: String,
   }
 });
 
